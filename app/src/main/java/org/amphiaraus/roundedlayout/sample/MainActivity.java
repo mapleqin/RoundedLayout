@@ -1,4 +1,4 @@
-package org.amphiaraus.roundlayout.sample;
+package org.amphiaraus.roundedlayout.sample;
 
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -9,7 +9,7 @@ import android.widget.CompoundButton;
 import android.widget.SeekBar;
 import android.widget.Switch;
 
-import org.amphiaraus.roundlayout.RoundLayout;
+import org.amphiaraus.roundedlayout.RoundedLayout;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -17,7 +17,7 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener {
 
-    @BindView(R.id.round_layout) RoundLayout mRoundLayout;
+    @BindView(R.id.round_layout) RoundedLayout mRoundedLayout;
     @BindView(R.id.as_circle) Switch mAsCircleSwitch;
     @BindView(R.id.top_left) Switch mTopLeftSwitch;
     @BindView(R.id.top_right) Switch mTopRightSwitch;
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
 
         mAsCircleSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                mRoundLayout.setRoundAsCircle(isChecked);
+                mRoundedLayout.setRoundAsCircle(isChecked);
             }
         });
         mTopLeftSwitch.setOnCheckedChangeListener(this);
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         mBorderWidthSeekBar.setProgress(dp2px(getResources(), .5f));
         mBorderWidthSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                mRoundLayout.setRoundingBorderWidth(progress);
+                mRoundedLayout.setRoundingBorderWidth(progress);
             }
 
             @Override public void onStartTrackingTouch(SeekBar seekBar) {
@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
     }
 
     private void adjustCornerRadius(int cornerRadius) {
-        mRoundLayout.setRoundedCornerRadius(cornerRadius,
+        mRoundedLayout.setRoundedCornerRadius(cornerRadius,
                 mTopLeftSwitch.isChecked(), mTopRightSwitch.isChecked(),
                 mBottomRightSwitch.isChecked(), mBottomLeftSwitch.isChecked());
     }

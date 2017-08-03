@@ -45,7 +45,7 @@
 
         </LinearLayout>
 
-        <org.amphiaraus.roundlayout.RoundLayout
+        <org.amphiaraus.roundedlayout.RoundedLayout
             android:id="@+id/round_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -60,7 +60,7 @@
                 android:scaleType="fitXY"
                 android:src="@mipmap/sample"/>
 
-        </org.amphiaraus.roundlayout.RoundLayout>
+        </org.amphiaraus.roundedlayout.RoundedLayout>
 
         <LinearLayout
             android:layout_width="match_parent"

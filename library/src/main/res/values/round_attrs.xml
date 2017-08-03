@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="RoundLayout">
+    <declare-styleable name="RoundedLayout">
         <attr name="rlRoundedCornerRadius" format="dimension"/>
         <attr name="rlRoundAsCircle" format="boolean"/>
         <attr name="rlRoundTopLeft" format="boolean"/>

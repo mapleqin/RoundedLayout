@@ -1,4 +1,4 @@
-package org.amphiaraus.roundlayout.sample;
+package org.amphiaraus.roundedlayout.sample;
 
 import android.app.Application;
 

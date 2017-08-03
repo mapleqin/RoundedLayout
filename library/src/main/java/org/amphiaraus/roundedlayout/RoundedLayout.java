@@ -1,4 +1,4 @@
-package org.amphiaraus.roundlayout;
+package org.amphiaraus.roundedlayout;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -9,7 +9,6 @@ import android.graphics.Path;
 import android.graphics.RectF;
 import android.os.Build;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.widget.FrameLayout;
 
 /**
@@ -17,7 +16,7 @@ import android.widget.FrameLayout;
  * since : 2017/8/2 下午5:46.
  */
 @SuppressWarnings("unused")
-public class RoundLayout extends FrameLayout {
+public class RoundedLayout extends FrameLayout {
 
     private Path mClipPath = new Path();
     private final Paint mPaint = new Paint();
@@ -35,23 +34,23 @@ public class RoundLayout extends FrameLayout {
     private int mRoundingBorderWidth;
     private int mRoundingBorderColor;
 
-    public RoundLayout(Context context) {
+    public RoundedLayout(Context context) {
         super(context);
         initLayouts(context, null, 0, 0);
     }
 
-    public RoundLayout(Context context, AttributeSet attrs) {
+    public RoundedLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
         initLayouts(context, attrs, 0, 0);
     }
 
-    public RoundLayout(Context context, AttributeSet attrs, int defStyleAttr) {
+    public RoundedLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         initLayouts(context, attrs, defStyleAttr, 0);
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    public RoundLayout(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public RoundedLayout(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
         initLayouts(context, attrs, defStyleAttr, defStyleRes);
     }
@@ -60,15 +59,15 @@ public class RoundLayout extends FrameLayout {
         if (isInEditMode()) {
             return;
         }
-        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.RoundLayout, defStyleAttr, defStyleRes);
-        mRoundedCornerRadius = a.getDimensionPixelSize(R.styleable.RoundLayout_rlRoundedCornerRadius, 0);
-        mRoundAsCircle = a.getBoolean(R.styleable.RoundLayout_rlRoundAsCircle, false);
-        mRoundTopLeft = a.getBoolean(R.styleable.RoundLayout_rlRoundTopLeft, true);
-        mRoundTopRight = a.getBoolean(R.styleable.RoundLayout_rlRoundTopRight, true);
-        mRoundBottomLeft = a.getBoolean(R.styleable.RoundLayout_rlRoundBottomLeft, true);
-        mRoundBottomRight = a.getBoolean(R.styleable.RoundLayout_rlRoundBottomRight, true);
-        mRoundingBorderWidth = a.getDimensionPixelSize(R.styleable.RoundLayout_rlRoundingBorderWidth, 0);
-        mRoundingBorderColor = a.getColor(R.styleable.RoundLayout_rlRoundingBorderColor, 0);
+        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.RoundedLayout, defStyleAttr, defStyleRes);
+        mRoundedCornerRadius = a.getDimensionPixelSize(R.styleable.RoundedLayout_rlRoundedCornerRadius, 0);
+        mRoundAsCircle = a.getBoolean(R.styleable.RoundedLayout_rlRoundAsCircle, false);
+        mRoundTopLeft = a.getBoolean(R.styleable.RoundedLayout_rlRoundTopLeft, true);
+        mRoundTopRight = a.getBoolean(R.styleable.RoundedLayout_rlRoundTopRight, true);
+        mRoundBottomLeft = a.getBoolean(R.styleable.RoundedLayout_rlRoundBottomLeft, true);
+        mRoundBottomRight = a.getBoolean(R.styleable.RoundedLayout_rlRoundBottomRight, true);
+        mRoundingBorderWidth = a.getDimensionPixelSize(R.styleable.RoundedLayout_rlRoundingBorderWidth, 0);
+        mRoundingBorderColor = a.getColor(R.styleable.RoundedLayout_rlRoundingBorderColor, 0);
         a.recycle();
 
         mPaint.setAntiAlias(true);
