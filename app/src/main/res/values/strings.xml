@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">RoundedLayout</string>
+    <string name="app_name">Rounded</string>
     <string name="card_view">CardView</string>
     <string name="corner_radius">CornerRadius</string>
     <string name="as_circle">AsCircle:</string>
