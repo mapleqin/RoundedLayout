@@ -1,0 +1,5 @@
+/*
+ * Copyright (C) 2015 Leholady(乐活女人) Inc. All rights reserved.
+ */
+
+include ':app', ':library'

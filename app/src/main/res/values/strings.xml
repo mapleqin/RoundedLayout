@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">RoundLayout</string>
+    <string name="card_view">CardView</string>
+    <string name="corner_radius">CornerRadius</string>
+    <string name="as_circle">AsCircle:</string>
+    <string name="top_left">TopLeft:</string>
+    <string name="top_right">TopRight:</string>
+    <string name="bottom_right">BottomRight:</string>
+    <string name="bottom_left">BottomLeft:</string>
+    <string name="round_border">RoundBorder</string>
+</resources>

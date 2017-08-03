@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#333">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:elevation="4dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/item_margin_horizontal"
+                android:paddingRight="@dimen/item_margin_horizontal"
+                android:text="@string/app_name"
+                android:textColor="@android:color/black"
+                android:textSize="22sp"/>
+
+            <Button
+                android:id="@+id/card_view"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/item_margin_horizontal"
+                android:layout_marginRight="@dimen/item_margin_horizontal"
+                android:background="@android:color/transparent"
+                android:text="@string/card_view"
+                android:textAllCaps="false"
+                android:textColor="@android:color/black"
+                android:textSize="17sp"/>
+
+        </LinearLayout>
+
+        <org.amphiaraus.roundlayout.RoundLayout
+            android:id="@+id/round_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/item_margin_horizontal"
+            app:rlRoundedCornerRadius="10dp"
+            app:rlRoundingBorderColor="@android:color/darker_gray"
+            app:rlRoundingBorderWidth=".5dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:src="@mipmap/sample"/>
+
+        </org.amphiaraus.roundlayout.RoundLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/item_margin_horizontal"
+            android:paddingRight="@dimen/item_margin_horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/corner_radius"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:text="@string/as_circle"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"/>
+
+            <Switch
+                android:id="@+id/as_circle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:targetApi="ice_cream_sandwich"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/item_margin_horizontal"
+            android:paddingRight="@dimen/item_margin_horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:text="@string/top_left"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"/>
+
+            <Switch
+                android:id="@+id/top_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                tools:targetApi="ice_cream_sandwich"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:text="@string/top_right"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"/>
+
+            <Switch
+                android:id="@+id/top_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                tools:targetApi="ice_cream_sandwich"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/item_margin_horizontal"
+            android:paddingRight="@dimen/item_margin_horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:text="@string/bottom_right"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"/>
+
+            <Switch
+                android:id="@+id/bottom_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                tools:targetApi="ice_cream_sandwich"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:text="@string/bottom_left"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"/>
+
+            <Switch
+                android:id="@+id/bottom_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                tools:targetApi="ice_cream_sandwich"/>
+
+        </LinearLayout>
+
+        <SeekBar
+            android:id="@+id/corner_radius"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/item_margin_horizontal"
+            android:layout_marginRight="@dimen/item_margin_horizontal"
+            android:paddingBottom="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/item_margin_horizontal"
+            android:paddingRight="@dimen/item_margin_horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/round_border"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"/>
+
+        </LinearLayout>
+
+        <SeekBar
+            android:id="@+id/border_width"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/item_margin_vertical"
+            android:layout_marginLeft="@dimen/item_margin_horizontal"
+            android:layout_marginRight="@dimen/item_margin_horizontal"
+            android:paddingBottom="8dp"/>
+
+    </LinearLayout>
+
+</FrameLayout>

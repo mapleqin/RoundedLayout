@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RoundLayout">
+        <attr name="rlRoundedCornerRadius" format="dimension"/>
+        <attr name="rlRoundAsCircle" format="boolean"/>
+        <attr name="rlRoundTopLeft" format="boolean"/>
+        <attr name="rlRoundTopRight" format="boolean"/>
+        <attr name="rlRoundBottomLeft" format="boolean"/>
+        <attr name="rlRoundBottomRight" format="boolean"/>
+        <attr name="rlRoundingBorderWidth" format="dimension"/>
+        <attr name="rlRoundingBorderColor" format="color"/>
+    </declare-styleable>
+</resources>
