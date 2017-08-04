@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  ~ Copyright (C) 2015 Leholady(乐活女人) Inc. All rights reserved.
-  -->
-
+<!--   ~ Copyright (C) 2015 Leholady(乐活女人) Inc. All rights reserved. -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="org.amphiaraus.roundedlayout.sample">
 
     <application
+        android:name=".App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:name="org.amphiaraus.roundedlayout.sample.App"
         android:theme="@style/AppTheme">
-        <activity android:name="org.amphiaraus.roundedlayout.sample.MainActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

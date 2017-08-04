@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
     @BindView(R.id.bottom_left) Switch mBottomLeftSwitch;
     @BindView(R.id.corner_radius) SeekBar mCornerRadiusSeekBar;
     @BindView(R.id.border_width) SeekBar mBorderWidthSeekBar;
+    @BindView(R.id.elevation_seek) SeekBar mElevationSeekBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +62,20 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         mBorderWidthSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 mRoundedLayout.setRoundingBorderWidth(progress);
+            }
+
+            @Override public void onStartTrackingTouch(SeekBar seekBar) {
+            }
+
+            @Override public void onStopTrackingTouch(SeekBar seekBar) {
+            }
+        });
+
+        mElevationSeekBar.setMax(dp2px(getResources(), 50));
+        mElevationSeekBar.setProgress(dp2px(getResources(), 10));
+        mElevationSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                mRoundedLayout.setRoundingElevation(progress);
             }
 
             @Override public void onStartTrackingTouch(SeekBar seekBar) {

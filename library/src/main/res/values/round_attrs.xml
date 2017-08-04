@@ -9,5 +9,6 @@
         <attr name="rlRoundBottomRight" format="boolean"/>
         <attr name="rlRoundingBorderWidth" format="dimension"/>
         <attr name="rlRoundingBorderColor" format="color"/>
+        <attr name="rlRoundingElevation" format="dimension"/>
     </declare-styleable>
 </resources>

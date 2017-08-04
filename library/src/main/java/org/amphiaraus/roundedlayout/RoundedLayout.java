@@ -7,7 +7,11 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Build;
+import android.support.annotation.Px;
+import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
 import android.widget.FrameLayout;
 
@@ -33,6 +37,10 @@ public class RoundedLayout extends FrameLayout {
 
     private int mRoundingBorderWidth;
     private int mRoundingBorderColor;
+
+    private float mRoundingElevation;
+
+    private GradientDrawable mBackground = new GradientDrawable();
 
     public RoundedLayout(Context context) {
         super(context);
@@ -68,12 +76,36 @@ public class RoundedLayout extends FrameLayout {
         mRoundBottomRight = a.getBoolean(R.styleable.RoundedLayout_rlRoundBottomRight, true);
         mRoundingBorderWidth = a.getDimensionPixelSize(R.styleable.RoundedLayout_rlRoundingBorderWidth, 0);
         mRoundingBorderColor = a.getColor(R.styleable.RoundedLayout_rlRoundingBorderColor, 0);
+        if (a.hasValue(R.styleable.RoundedLayout_rlRoundingElevation)) {
+            mRoundingElevation = a.getDimensionPixelSize(R.styleable.RoundedLayout_rlRoundingElevation, 0);
+        }
         a.recycle();
+
+        setRoundingElevation(mRoundingElevation);
 
         mPaint.setAntiAlias(true);
         mPaint.setColor(mRoundingBorderColor);
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setStrokeWidth(mRoundingBorderWidth * 2);
+
+        mBackground.setColor(mRoundingBorderColor | 0xFF000000);
+        mBackground.setCornerRadii(buildRoundCornerRadii(mRoundedCornerRadius));
+
+        super.setBackgroundDrawable(mBackground);
+    }
+
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    @Override public void setElevation(@Px float elevation) {
+        super.setElevation(elevation);
+        mRoundingElevation = elevation;
+    }
+
+    @Override public void setBackground(Drawable background) {
+        // super.setBackground(background);
+    }
+
+    @Override public void setBackgroundDrawable(Drawable background) {
+        // super.setBackgroundDrawable(background);
     }
 
     @Override protected void onSizeChanged(int w, int h, int oldw, int oldh) {
@@ -106,6 +138,8 @@ public class RoundedLayout extends FrameLayout {
         mClipPath.reset();
         mClipPath.addRoundRect(mLayoutBounds, buildRoundCornerRadii(cornerRadius), Path.Direction.CW);
         mClipPath.close();
+
+        mBackground.setCornerRadii(buildRoundCornerRadii(cornerRadius));
     }
 
     private float[] buildRoundCornerRadii(float cornerRadius) {
@@ -116,19 +150,25 @@ public class RoundedLayout extends FrameLayout {
         return mRoundCornerRadii;
     }
 
-    @Override protected void onDraw(Canvas canvas) {
+    @Override public void draw(Canvas canvas) {
         canvas.clipPath(mClipPath);
-        super.onDraw(canvas);
+        super.draw(canvas);
         if (mRoundingBorderWidth > 0 && mRoundingBorderColor != 0) {
             canvas.drawPath(mClipPath, mPaint);
         }
     }
 
-    @Override protected void dispatchDraw(Canvas canvas) {
-        canvas.clipPath(mClipPath);
-        super.dispatchDraw(canvas);
-        if (mRoundingBorderWidth > 0 && mRoundingBorderColor != 0) {
-            canvas.drawPath(mClipPath, mPaint);
+    /**
+     * Sets the base elevation of this view, in pixels.
+     *
+     * @param elevation org.amphiaraus.roundedlayout.R.styleable#RoundedLayout_rlRoundingElevation
+     */
+    public void setRoundingElevation(float elevation) {
+        this.mRoundingElevation = elevation;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            setElevation(elevation);
+        } else {
+            ViewCompat.setElevation(this, elevation);
         }
     }
 
@@ -154,6 +194,7 @@ public class RoundedLayout extends FrameLayout {
         if (color != mRoundingBorderColor) {
             mRoundingBorderColor = color;
             mPaint.setColor(mRoundingBorderColor);
+            mBackground.setColor(mRoundingBorderColor | 0xFF000000);
             postInvalidate();
         }
     }
@@ -274,5 +315,14 @@ public class RoundedLayout extends FrameLayout {
      */
     public int getRoundingBorderColor() {
         return mRoundingBorderColor;
+    }
+
+    /**
+     * The base elevation of this view relative to its parent, in pixels.
+     *
+     * @return The base depth position of the view, in pixels.
+     */
+    public float getRoundingElevation() {
+        return mRoundingElevation;
     }
 }

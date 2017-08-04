@@ -8,4 +8,6 @@
     <string name="bottom_right">BottomRight:</string>
     <string name="bottom_left">BottomLeft:</string>
     <string name="round_border">RoundBorder</string>
+    <string name="card">Card</string>
+    <string name="elevation">Elevation</string>
 </resources>

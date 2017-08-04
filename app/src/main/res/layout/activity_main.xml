@@ -31,18 +31,6 @@
                 android:textColor="@android:color/black"
                 android:textSize="22sp"/>
 
-            <Button
-                android:id="@+id/card_view"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="@dimen/item_margin_horizontal"
-                android:layout_marginRight="@dimen/item_margin_horizontal"
-                android:background="@android:color/transparent"
-                android:text="@string/card_view"
-                android:textAllCaps="false"
-                android:textColor="@android:color/black"
-                android:textSize="17sp"/>
-
         </LinearLayout>
 
         <org.amphiaraus.roundedlayout.RoundedLayout
@@ -52,7 +40,8 @@
             android:layout_margin="@dimen/item_margin_horizontal"
             app:rlRoundedCornerRadius="10dp"
             app:rlRoundingBorderColor="@android:color/darker_gray"
-            app:rlRoundingBorderWidth=".5dp">
+            app:rlRoundingBorderWidth=".5dp"
+            app:rlRoundingElevation="10dp">
 
             <ImageView
                 android:layout_width="match_parent"
@@ -208,6 +197,31 @@
 
         <SeekBar
             android:id="@+id/border_width"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/item_margin_horizontal"
+            android:layout_marginRight="@dimen/item_margin_horizontal"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/item_margin_horizontal"
+            android:paddingRight="@dimen/item_margin_horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/elevation"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"/>
+
+        </LinearLayout>
+
+        <SeekBar
+            android:id="@+id/elevation_seek"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/item_margin_vertical"
