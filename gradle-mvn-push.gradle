@@ -96,13 +96,16 @@ bintray {
     try {
         is = file(System.properties['user.home'] + '/.commonconf').newDataInputStream();
         properties.load(is)
-    } finally {
+        user = properties.getProperty('BINTRAY_USER')
+        key = properties.getProperty('BINTRAY_KEY')
+    } catch (FileNotFoundException e){
+        user = ''
+        key = ''
+    }finally {
         if (is != null) {
             is.close()
         }
     }
-    user = properties.getProperty('BINTRAY_USER')
-    key = properties.getProperty('BINTRAY_KEY')
 
     configurations = ['archives']
     publications = ['mavenJava']
