@@ -3,6 +3,8 @@ This is a library that has a rounded cut of View, support whether the specified 
 
 For more information please see <a href='http://devsoulwolf.github.io/RoundedLayout'>the website</a>
 
+# Screenshots
+  ![Sample](https://github.com/amphiaraus/RoundedLayout/blob/master/Screenshots/sample.gif)
 # Gradle
     compile 'org.amphiaraus:RoundedLayout:0.8.1'
 # Maven
