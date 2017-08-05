@@ -1,12 +1,12 @@
 # RoundedLayout
 This is a library that has a rounded cut of View, support whether the specified corners are cropped and add a custom Border, and add a shadow support from API 9, which is based on FrameLayout, that is, His Child can be any View, the current library or preview version, if you encounter problems in the process can submit issue or pr.
 
-For more information please see <a href='http://amphiaraus.github.io/RoundedLayout'>the website</a>
-
 # Screenshots
   ![Sample](https://github.com/amphiaraus/RoundedLayout/blob/master/Screenshots/sample1.gif)
+
 # Gradle
     compile 'org.amphiaraus:RoundedLayout:0.8.1'
+
 # Maven
     <dependency>
       <groupId>org.amphiaraus</groupId>
@@ -14,8 +14,10 @@ For more information please see <a href='http://amphiaraus.github.io/RoundedLayo
       <version>0.8.1</version>
       <type>pom</type>
     </dependency>
+
 # Developed by
  Amphiaraus - <a href='javascript:'>amphiarause@gmail.com</a>
+
 # License
     Copyright 2017 Amphiaraus
     
