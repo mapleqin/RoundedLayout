@@ -143,10 +143,14 @@ public class RoundedLayout extends FrameLayout {
     }
 
     private float[] buildRoundCornerRadii(float cornerRadius) {
-        mRoundCornerRadii[0] = mRoundCornerRadii[1] = mRoundTopLeft ? cornerRadius : 0;
-        mRoundCornerRadii[2] = mRoundCornerRadii[3] = mRoundTopRight ? cornerRadius : 0;
-        mRoundCornerRadii[4] = mRoundCornerRadii[5] = mRoundBottomRight ? cornerRadius : 0;
-        mRoundCornerRadii[6] = mRoundCornerRadii[7] = mRoundBottomLeft ? cornerRadius : 0;
+        mRoundCornerRadii[0] = mRoundTopLeft ? cornerRadius : 0f;
+        mRoundCornerRadii[1] = mRoundTopLeft ? cornerRadius : 0f;
+        mRoundCornerRadii[2] = mRoundTopRight ? cornerRadius : 0f;
+        mRoundCornerRadii[3] = mRoundTopRight ? cornerRadius : 0f;
+        mRoundCornerRadii[4] = mRoundBottomRight ? cornerRadius : 0f;
+        mRoundCornerRadii[5] = mRoundBottomRight ? cornerRadius : 0f;
+        mRoundCornerRadii[6] = mRoundBottomLeft ? cornerRadius : 0f;
+        mRoundCornerRadii[7] = mRoundBottomLeft ? cornerRadius : 0f;
         return mRoundCornerRadii;
     }
 

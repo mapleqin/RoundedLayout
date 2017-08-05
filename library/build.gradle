@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'checkstyle'
 
 android {
     compileSdkVersion 25
@@ -26,3 +27,13 @@ dependencies {
     provided 'com.android.support:support-v4:25.3.1'
 }
 apply from : '../gradle-mvn-push.gradle'
+
+task checkstyle(type:Checkstyle) {
+    description 'Runs Checkstyle inspection against matisse sourcesets.'
+    group = 'Code Quality'
+    configFile rootProject.file('checkstyle.xml')
+    ignoreFailures = false
+    showViolations true
+    classpath = files()
+    source 'src/main/java'
+}
