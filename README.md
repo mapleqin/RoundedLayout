@@ -5,13 +5,13 @@ This is a library that has a rounded cut of View, support whether the specified 
   ![Sample](https://github.com/amphiaraus/RoundedLayout/blob/master/Screenshots/sample1.gif)
 
 # Gradle
-    compile 'org.amphiaraus:RoundedLayout:0.8.1'
+    compile 'org.amphiaraus:RoundedLayout:0.8.2'
 
 # Maven
     <dependency>
       <groupId>org.amphiaraus</groupId>
       <artifactId>RoundedLayout</artifactId>
-      <version>0.8.1</version>
+      <version>0.8.2</version>
       <type>pom</type>
     </dependency>
 
