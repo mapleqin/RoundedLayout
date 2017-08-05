@@ -18,7 +18,7 @@ For more information please see <a href='http://amphiaraus.org/RoundedLayout/'>t
     </dependency>
 
 # Developed by
- Amphiaraus - <a href='mailto://amphiarause@gmail.com'>amphiarause@gmail.com</a>
+ Amphiaraus - <a href='mailto:amphiarause@gmail.com'>amphiarause@gmail.com</a>
 
 # License
     Copyright 2017 Amphiaraus
