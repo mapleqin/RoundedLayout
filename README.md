@@ -5,18 +5,17 @@ This is a library that has a rounded cut of View, support whether the specified 
 For more information please see <a href='http://amphiaraus.org/RoundedLayout/'>the website</a>
 
 # Screenshots
-  ![Sample](https://github.com/amphiaraus/RoundedLayout/raw/master/Screenshots/sample1.gif)
+  ![Sample](https://github.com/mapleqin/RoundedLayout/raw/master/Screenshots/sample1.gif)
 
 # Gradle
-    compile 'org.amphiaraus:RoundedLayout:[version]'
+    allprojects {
+      repositories {
+        ...
+        maven { url 'https://jitpack.io' }
+      }
+    }
 
-# Maven
-    <dependency>
-      <groupId>org.amphiaraus</groupId>
-      <artifactId>RoundedLayout</artifactId>
-      <version>[version]</version>
-      <type>pom</type>
-    </dependency>
+    implementation 'com.github.mapleqin:RoundedLayout:${version}'
 
 # Developed by
  Amphiaraus - <a href='mailto:amphiarause@gmail.com'>amphiarause@gmail.com</a>
