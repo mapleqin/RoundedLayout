@@ -1,4 +1,5 @@
-# RoundedLayout [![Build](https://travis-ci.org/amphiaraus/RoundedLayout.svg?branch=master)](https://travis-ci.org/amphiaraus/RoundedLayout) [ ![Version](https://api.bintray.com/packages/soulwolf/maven/RoundedLayout/images/download.svg) ](https://bintray.com/soulwolf/maven/RoundedLayout/_latestVersion)
+# RoundedLayout [![Build](https://travis-ci.org/amphiaraus/RoundedLayout.svg?branch=master)](https://travis-ci.org/amphiaraus/RoundedLayout) [![](https://jitpack.io/v/mapleqin/RoundedLayout.svg)](https://jitpack.io/#mapleqin/RoundedLayout)
+
 This is a library that has a rounded cut of View, support whether the specified corners are cropped and add a custom Border, and add a shadow support from API 9, which is based on FrameLayout, that is, His Child can be any View, the current library or preview version, if you encounter problems in the process can submit issue or pr.
 
 For more information please see <a href='http://amphiaraus.org/RoundedLayout/'>the website</a>
